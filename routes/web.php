@@ -1,9 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PageController;
 
-Route::get('/articles/{id}', function ($id) {
-    return 'Halaman Artikel dengan ID: ' . $id;
-});
+Route::get('/', [PageController::class, 'index']);
+Route::get('/about', [PageController::class, 'about']);
+Route::get('/articles/{id}', [PageController::class, 'articles']);
 
 
