@@ -1,15 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PhotoController;
 
-Route::resource('photos', PhotoController::class)->only([
-    'index', 'show'
-]);
+Route::get('/greeting', function () {
+	return view('hello', ['name' => 'Faiva']);
+});
 
-Route::resource('photos', PhotoController::class)->except([
-    'create', 'store', 'update', 'destroy'
-]);
 
 
 
